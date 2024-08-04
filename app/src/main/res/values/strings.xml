@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NativeMobileCaseStudy</string>
+    <string name="company_name">E-Market</string>
+    <string name="search">Search</string>
+    <string name="filters">Filters:</string>
+    <string name="select_filter">Select Filter</string>
+    <string name="add_cart">Add To Cart</string>
+    <string name="complete">Complete</string>
+</resources>
