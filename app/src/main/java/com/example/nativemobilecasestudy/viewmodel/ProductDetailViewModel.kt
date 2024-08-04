@@ -1,4 +1,4 @@
-package com.example.nativemobilecasestudy
+package com.example.nativemobilecasestudy.viewmodel
 
 import androidx.lifecycle.ViewModel
 

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeListFragment">
+    tools:context=".view.HomeListFragment">
 
     <LinearLayout
         android:id="@+id/company_bar"
@@ -99,7 +99,8 @@
         app:layout_constraintTop_toBottomOf="@id/filters_bar"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/home_item"/>
 
     <LinearLayout
         android:id="@+id/bottom_navigation"
