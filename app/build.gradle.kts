@@ -1,6 +1,8 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    id ("com.android.application")
+    id ("kotlin-android")
+    id ("androidx.navigation.safeargs.kotlin")
+    id ("kotlin-kapt")
 }
 
 android {
@@ -27,32 +29,48 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 }
 
 dependencies {
-    implementation ("com.github.bumptech.glide:glide:4.12.0")
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.legacy.support.v4)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.fragment.ktx)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    // Room dependencies
+    implementation (libs.androidx.room.runtime)
+    kapt (libs.androidx.room.compiler)
+    implementation (libs.androidx.room.ktx.v252)
+
+    // Glide for image loading
+    implementation (libs.glide)
+    kapt (libs.compiler)
+
+    // Navigation components
+    implementation (libs.androidx.navigation.fragment.ktx.v260)
+    implementation (libs.androidx.navigation.ui.ktx.v260)
+
+    // Retrofit for network requests
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+
+    // AndroidX dependencies
+    implementation (libs.androidx.core.ktx.v1101)
+    implementation (libs.androidx.appcompat.v161)
+    implementation (libs.material.v190)
+    implementation (libs.androidx.activity.ktx)
+    implementation (libs.androidx.constraintlayout)
+    implementation (libs.androidx.legacy.support.v4)
+    implementation (libs.androidx.lifecycle.livedata.ktx.v261)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx.v261)
+    implementation (libs.androidx.fragment.ktx.v161)
+
+    // Test dependencies
+    testImplementation (libs.junit)
+    androidTestImplementation (libs.androidx.junit.v115)
+    androidTestImplementation (libs.androidx.espresso.core.v351)
 }

@@ -1,11 +1,14 @@
 package com.example.nativemobilecasestudy.model
 
-data class Product(
+import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-    val id: String,
+@Entity(tableName = "products")
+data class Product(
+    @PrimaryKey val id: String,
     val name: String,
     val price: String,
-    val imageUrl: String,
-    val description: String
-
+    val description: String,
+    val imageUrl: String
 )
